@@ -1,0 +1,110 @@
+
+.cd-hero {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+
+  ul {
+    list-style-type: none;
+  }
+
+  .cd-header {
+    //position: absolute;
+    //top: 0;
+    //left: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 5px 0 5px 0;
+    font-family: "Minecraft";
+  }
+}
+
+.cd-hero-slider {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+
+  li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: trasform .5s;
+
+    &.selected {
+      position: relative;
+      transform: translateX(0);
+      transition: transform .5s;
+    }
+    &:first-of-type {
+      //background-color: red;
+      background-image: url(../img/slider_big_images/vanilla.jpg);
+    }
+    &:nth-of-type(2) {
+      //background-color: yellow;
+      background-image: url(../img/slider_big_images/kindoms.png);
+    }
+    &:nth-of-type(3) {
+      //background-color: green;
+      background-image: url(../img/slider_big_images/skyblock.jpg);
+    }
+    &:nth-of-type(4){
+      //background-color: aqua;
+      background-image: url(../img/slider_big_images/creative.jpg);
+    }
+    &:nth-of-type(5){
+      //background-color: blue;
+      background-image: url(../img/slider_big_images/games.jpg);
+    }
+    &.move-left {
+      transform: translate(-100%);
+    }
+
+    &.is-moving {
+      transition: transform .5s;
+    }
+  }
+
+}
+
+.cd-slider-nav {
+  ul {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  ul li {
+    display: inline-block;
+    height: 100%;
+
+    a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      line-height: 70px;
+      height: 100%;
+      width: 120px;
+      font-family: "Minecraft";
+      text-align: center;
+      transition: all ease-in-out .3s;
+    }
+
+    &.selected a {
+      color: #000;
+      transition: all ease-in-out .3s;
+      background-color: #faebd7;
+    }
+  }
+}

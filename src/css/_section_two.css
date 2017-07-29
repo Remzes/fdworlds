@@ -1,0 +1,36 @@
+.section_two {
+  height: 1000px;
+  width: 100%;
+  background-color: #faebd7;
+  z-index: 3;
+  position: relative;
+}
+.section_two h1 {
+  margin: 0;
+  padding-top: 15px;
+  width: 100%;
+  text-align: center;
+  font-family: "Minecraft";
+  font-size: 55px;
+  text-shadow: 0 0 1px #000;
+  margin-bottom: 20px;
+}
+.section_two .hr_after_header,
+.section_two .hr_before_header {
+  width: 80%;
+  height: 5px;
+  margin: 0 auto;
+  background-color: #000000;
+}
+.section_two .div_before_hr_in_header {
+  width: 100%;
+  float: left;
+}
+.section_two .div_after_hr_in_header {
+  width: 100%;
+  float: right;
+}
+.section_two .hr_before_header {
+  margin: 0 auto;
+  margin-top: 10px;
+}

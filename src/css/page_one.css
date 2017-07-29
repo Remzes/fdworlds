@@ -1,0 +1,47 @@
+.page_one {
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  min-height: 100%;
+  position: relative;
+  background-color: aquamarine;
+  background-position: center center;
+  background-size: cover;
+  z-index: -2;
+}
+.page_one .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.page_one .slide_one {
+  background: url('../img/1.jpg') center center;
+  background-size: cover;
+}
+.page_one .slide_two {
+  background: url('../img/2.jpg') center center;
+  background-size: cover;
+}
+.page_one .slide_three {
+  background: url('../img/3.jpg') center center;
+  background-size: cover;
+}
+.page_one .slide_four {
+  background: url('../img/4.png') center center;
+  background-size: cover;
+}
+.page_one .slide_five {
+  background: url('../img/5.jpg') center center;
+  background-size: cover;
+}
+.page_one .slide_six {
+  background: url('../img/6.jpg') center center;
+  background-size: cover;
+}
+.active {
+  z-index: 1;
+}
