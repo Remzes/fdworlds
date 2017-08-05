@@ -2,3 +2,11 @@
   font-family: "Minecraft";
   src: url(../fonts/minecraft/minecraft.woff);
 }
+@font-face {
+  font-family: "Digital Tech";
+  src: url(../fonts/digital_tech/Digital_tech.otf);
+}
+@font-face {
+  font-family: "Strange";
+  src: url(../fonts/digital_tech/);
+}

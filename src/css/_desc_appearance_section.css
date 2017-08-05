@@ -1,0 +1,62 @@
+.desc_appearance_section {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.desc_appearance_section section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+  transform: translateX(-90%);
+  opacity: 0;
+  transition: transform .3s, opacity .6s;
+}
+.desc_appearance_section section p {
+  width: 700px;
+  margin-right: 20px;
+  font-size: 18px;
+  font-family: "Minecraft";
+  line-height: 23px;
+}
+.desc_appearance_section section:nth-child(2n) {
+  transform: translateX(100%);
+}
+.desc_appearance_section section:nth-child(2n) p {
+  text-align: right;
+}
+.desc_appearance_section section img {
+  width: 210px;
+  height: 210px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 1250px) {
+  .desc_appearance_section img {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  .desc_appearance_section p {
+    font-size: 15px !important;
+  }
+}
+@media screen and (max-width: 850px) {
+  .desc_appearance_section img {
+    width: 140px !important;
+    height: 140px !important;
+  }
+  .desc_appearance_section p {
+    font-size: 12px !important;
+  }
+}
+@media screen and (max-width: 490px) {
+  .desc_appearance_section img {
+    display: none;
+  }
+  .desc_appearance_section p:nth-child(2n) {
+    background-color: #fff;
+  }
+}

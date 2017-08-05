@@ -1,7 +1,6 @@
 .cd-hero {
   position: relative;
   width: 100%;
-  margin-top: 20px;
 }
 .cd-hero ul {
   list-style-type: none;
@@ -16,7 +15,7 @@
 }
 .cd-hero-slider {
   position: relative;
-  height: 60vh;
+  height: 80vh;
   overflow: hidden;
 }
 .cd-hero-slider li {
@@ -57,32 +56,54 @@
 .cd-hero-slider li.is-moving {
   transition: transform .5s;
 }
+.cd-maker {
+  position: absolute;
+  width: 150px;
+  height: 70px;
+  background-color: #ffffff;
+  bottom: 0;
+  z-index: 5;
+  background: url(../img/slider_nav_icons/Grass-icon.png) top center no-repeat;
+  background-size: cover;
+  left: 206px;
+  transition: transform ease-in-out 0.2s;
+}
 .cd-slider-nav ul {
+  position: absolute;
+  bottom: 0;
   display: flex;
   width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   height: 70px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 .cd-slider-nav ul li {
   display: inline-block;
   height: 100%;
+  transition: all ease-in-out 0.3s;
 }
 .cd-slider-nav ul li a {
+  position: relative;
   display: inline-block;
   color: #fff;
   text-decoration: none;
   line-height: 70px;
   height: 100%;
-  width: 120px;
+  width: 150px;
+  z-index: 6;
   font-family: "Minecraft";
   text-align: center;
-  transition: all ease-in-out 0.3s;
+  transition: background ease-in-out 0.5s;
+}
+.cd-slider-nav ul li span {
+  transition: all ease-in-out 0.1s;
 }
 .cd-slider-nav ul li.selected a {
-  color: #000;
-  transition: all ease-in-out 0.3s;
-  background-color: #faebd7;
+  color: #fff;
+}
+.cd-slider-nav ul li.selected a span {
+  display: inline-block;
+  transform: translateY(-20px);
 }

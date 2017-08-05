@@ -132,11 +132,12 @@
   animation-play-state: paused !important;
 }
 .section_two {
-  height: 1000px;
+  height: auto;
   width: 100%;
   background-color: #faebd7;
   z-index: 3;
   position: relative;
+  padding-bottom: 50px;
 }
 .section_two h1 {
   margin: 0;
@@ -144,33 +145,15 @@
   width: 100%;
   text-align: center;
   font-family: "Minecraft";
+  background: #000000;
+  color: #ffffff;
   font-size: 55px;
   text-shadow: 0 0 1px #000;
-  margin-bottom: 20px;
-}
-.section_two .hr_after_header,
-.section_two .hr_before_header {
-  width: 80%;
-  height: 5px;
-  margin: 0 auto;
-  background-color: #000000;
-}
-.section_two .div_before_hr_in_header {
-  width: 100%;
-  float: left;
-}
-.section_two .div_after_hr_in_header {
-  width: 100%;
-  float: right;
-}
-.section_two .hr_before_header {
-  margin: 0 auto;
-  margin-top: 10px;
+  padding-bottom: 20px;
 }
 .cd-hero {
   position: relative;
   width: 100%;
-  margin-top: 20px;
 }
 .cd-hero ul {
   list-style-type: none;
@@ -185,7 +168,7 @@
 }
 .cd-hero-slider {
   position: relative;
-  height: 60vh;
+  height: 80vh;
   overflow: hidden;
 }
 .cd-hero-slider li {
@@ -226,34 +209,156 @@
 .cd-hero-slider li.is-moving {
   transition: transform .5s;
 }
+.cd-maker {
+  position: absolute;
+  width: 150px;
+  height: 70px;
+  background-color: #ffffff;
+  bottom: 0;
+  z-index: 5;
+  background: url(../img/slider_nav_icons/Grass-icon.png) top center no-repeat;
+  background-size: cover;
+  left: 206px;
+  transition: transform ease-in-out 0.2s;
+}
 .cd-slider-nav ul {
+  position: absolute;
+  bottom: 0;
   display: flex;
   width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   height: 70px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 .cd-slider-nav ul li {
   display: inline-block;
   height: 100%;
+  transition: all ease-in-out 0.3s;
 }
 .cd-slider-nav ul li a {
+  position: relative;
   display: inline-block;
   color: #fff;
   text-decoration: none;
   line-height: 70px;
   height: 100%;
-  width: 120px;
+  width: 150px;
+  z-index: 6;
   font-family: "Minecraft";
   text-align: center;
-  transition: all ease-in-out 0.3s;
+  transition: background ease-in-out 0.5s;
+}
+.cd-slider-nav ul li span {
+  transition: all ease-in-out 0.1s;
 }
 .cd-slider-nav ul li.selected a {
-  color: #000;
-  transition: all ease-in-out 0.3s;
-  background-color: #faebd7;
+  color: #fff;
+}
+.cd-slider-nav ul li.selected a span {
+  display: inline-block;
+  transform: translateY(-20px);
+}
+.inside_li_in_slider {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #faebd7;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+.inside_li_in_slider h1 {
+  font-family: "Digital Tech";
+  font-size: 45px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+.inside_li_in_slider p {
+  font-family: "Inconsolata", monospace;
+}
+.desc_appearance_section {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.desc_appearance_section section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+  transform: translateX(-90%);
+  opacity: 0;
+  transition: transform .3s, opacity .6s;
+}
+.desc_appearance_section section p {
+  width: 700px;
+  margin-right: 20px;
+  font-size: 18px;
+  font-family: "Minecraft";
+  line-height: 23px;
+}
+.desc_appearance_section section:nth-child(2n) {
+  transform: translateX(100%);
+}
+.desc_appearance_section section:nth-child(2n) p {
+  text-align: right;
+}
+.desc_appearance_section section img {
+  width: 210px;
+  height: 210px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 1250px) {
+  .desc_appearance_section img {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  .desc_appearance_section p {
+    font-size: 15px !important;
+  }
+}
+@media screen and (max-width: 850px) {
+  .desc_appearance_section img {
+    width: 140px !important;
+    height: 140px !important;
+  }
+  .desc_appearance_section p {
+    font-size: 12px !important;
+  }
+}
+@media screen and (max-width: 490px) {
+  .desc_appearance_section img {
+    display: none;
+  }
+  .desc_appearance_section p:nth-child(2n) {
+    background-color: #fff;
+  }
+}
+.section_three {
+  background-color: #fff;
+}
+.section_three .cd_header_block h1 {
+  margin: 0;
+  padding-top: 15px;
+  width: 100%;
+  text-align: center;
+  font-family: "Minecraft";
+  background: #000000;
+  color: #ffffff;
+  font-size: 55px;
+  text-shadow: 0 0 1px #000;
+  padding-bottom: 20px;
 }
 @keyframes bounce {
   0%,
@@ -326,6 +431,14 @@
 @font-face {
   font-family: "Minecraft";
   src: url(../fonts/minecraft/minecraft.woff);
+}
+@font-face {
+  font-family: "Digital Tech";
+  src: url(../fonts/digital_tech/Digital_tech.otf);
+}
+@font-face {
+  font-family: "Strange";
+  src: url(../fonts/digital_tech/);
 }
 * {
   margin: 0;

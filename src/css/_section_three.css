@@ -1,12 +1,7 @@
-.section_two {
-  height: auto;
-  width: 100%;
-  background-color: #faebd7;
-  z-index: 3;
-  position: relative;
-  padding-bottom: 50px;
+.section_three {
+  background-color: #fff;
 }
-.section_two h1 {
+.section_three .cd_header_block h1 {
   margin: 0;
   padding-top: 15px;
   width: 100%;
