@@ -130,25 +130,33 @@ function mainSliderOnTheSecondBlock() {
     function nextSlide(visibleSlide, container, pagination, n) {
         visibleSlide.removeClass('selected from-left from-right').addClass('is-moving').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
             visibleSlide.removeClass('is-moving')
-        })
+        });
 
         container.children('li').eq(n).addClass('selected from-right').removeClass('move-left').prevAll().addClass('move-left')
 
+        let fileName = parseInt(n) + ".png";
+
         $(".cd-maker").css({
-            transform: `translateX(${150 * (n)}px)`
-        })
+            transform: `translateX(${150 * (n)}px)`,
+            background: `url(img/slider_nav_icons/${fileName}) top center no-repeat`,
+            "background-size": "cover"
+        });
     }
 
     function prevSlide(visibleSlide, container, pagination, n) {
         visibleSlide.removeClass('selected from-left from-right').addClass('is-moving').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
             visibleSlide.removeClass('is-moving')
-        })
+        });
 
         container.children('li').eq(n).addClass('selected from-left').removeClass('move-left').nextAll().removeClass('move-left')
 
+        let fileName = parseInt(n) + ".png";
+
         $(".cd-maker").css({
-            transform: `translateX(${150 * (n)}px)`
-        })
+            transform: `translateX(${150 * (n)}px)`,
+            background: `url(img/slider_nav_icons/${fileName}) top center no-repeat`,
+            "background-size": "cover"
+        });
     }
 
     function updateNavigationMaker(marker, n) {
@@ -224,10 +232,18 @@ $(window).on('load', function () {
 
 $(window).on('scroll', function () {
     fadeOutScrollDownButtonOnScroll();
-    // console.log($(window).scrollTop());
+    console.log($(window).scrollTop());
     moveLogoAndMenuOnScroll();
     if ($(window).scrollTop() > 450) {
         apperaInTheAboutSection();
+    }
+
+    if ($(window).scrollTop() > 2320) {
+        let scrollFourSection = $(window).scrollTop() / 27 + 1;
+
+        $(".section_four").css({
+            "background-position": `100px -${scrollFourSection}px`
+        });
     }
 })//End of function
 

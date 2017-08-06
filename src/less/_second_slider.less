@@ -41,23 +41,23 @@
     }
     &:first-of-type {
       //background-color: red;
-      background-image: url(../img/slider_big_images/vanilla.jpg);
+      background-image: url(../img/slider_big_images_razmit/vanilla.jpg);
     }
     &:nth-of-type(2) {
       //background-color: yellow;
-      background-image: url(../img/slider_big_images/kindoms.png);
+      background-image: url(../img/slider_big_images_razmit/kindoms.png);
     }
     &:nth-of-type(3) {
       //background-color: green;
-      background-image: url(../img/slider_big_images/skyblock.jpg);
+      background-image: url(../img/slider_big_images_razmit/skyblock.jpg);
     }
     &:nth-of-type(4) {
       //background-color: aqua;
-      background-image: url(../img/slider_big_images/creative.jpg);
+      background-image: url(../img/slider_big_images_razmit/creative.jpg);
     }
     &:nth-of-type(5) {
       //background-color: blue;
-      background-image: url(../img/slider_big_images/games.jpg);
+      background-image: url(../img/slider_big_images_razmit/games.jpg);
     }
     &.move-left {
       transform: translate(-100%);
@@ -67,7 +67,20 @@
       transition: transform .5s;
     }
   }
+}
 
+.inside_slider_nav {
+  background: url(../img/section_three.png);
+  background-position: 0 0;
+  //background-color: #35C93C;
+  opacity: 0.5;
+  background-size: cover;
+  position:relative;
+  top: -70px;
+  z-index: 3;
+  left: 0;
+  width: 100%;
+  height: 70px;
 }
 
 .cd-maker {
@@ -77,13 +90,27 @@
   background-color: #ffffff;
   bottom: 0;
   z-index: 5;
-  background: url(../img/slider_nav_icons/Grass-icon.png) top center no-repeat;
+  background: url(../img/slider_nav_icons/0.png) top center no-repeat;
   background-size: cover;
-  left: 206px;
-  transition: transform ease-in-out .2s;
+  transform: translateY(0);
+  transition: transform ease-in-out .2s, background ease-in-out .3s;
 }
 
 .cd-slider-nav {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.75);
+
+  nav {
+    width: 750px;
+    height: 70px;
+    margin: 0 auto;
+    position: relative;
+  }
+
   ul {
     position: absolute;
     bottom: 0;
@@ -93,7 +120,6 @@
     align-items: center;
     justify-content: center;
     height: 70px;
-    background-color: rgba(0, 0, 0, 0.75);
   }
 
   ul li {
@@ -117,17 +143,14 @@
 
     span {
       transition: all ease-in-out .1s;
+      display: inline-block;
     }
 
     &.selected {
       a {
         color: #fff;
-        //background-color: #faebd7;
-        //background: url(../img/slider_nav_icons/Grass-icon.png) top center no-repeat;
-        //background-size: cover;
 
         span {
-          display: inline-block;
           transform: translateY(-20px);
         }
       }

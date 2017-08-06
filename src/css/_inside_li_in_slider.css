@@ -1,15 +1,60 @@
 .inside_li_in_slider {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
   height: 100%;
   background: #faebd7;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.inside_li_in_slider .content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  position: relative;
+  top: -35px;
+  color: #ffffff;
+  text-align: center;
+}
+.inside_li_in_slider .content h1 {
+  text-align: center;
+  font-size: 51px;
+  color: #34a64e;
+  letter-spacing: 7px;
+  margin-top: 10px;
+}
+.inside_li_in_slider .content p {
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+  font-family: "TTW";
+  font-size: 25px;
+}
+.inside_li_in_slider .content div {
+  margin-top: 30px;
+}
+.inside_li_in_slider .content div a {
+  outline: none;
+  text-decoration: none;
+  height: 40px;
+  display: inline-block;
+  width: 200px;
+  line-height: 40px;
+  padding-left: 3px;
+  font-family: "Minecraft";
+  color: #35C93C;
+  border-right: 1px solid #000;
+  background: url(../img/btn.png) 0 -40px;
+}
+.inside_li_in_slider .content div a:hover {
+  background: url(../img/btn.png) 0 -80px;
+  box-shadow: 0 0 10px gray;
+}
+.inside_li_in_slider .content div a:visited {
+  color: #35C93C;
+  background: url(../img/btn.png) 0 0;
 }
 .inside_li_in_slider h1 {
   font-family: "Digital Tech";

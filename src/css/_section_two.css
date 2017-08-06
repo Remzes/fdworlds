@@ -1,7 +1,8 @@
 .section_two {
   height: auto;
   width: 100%;
-  background-color: #faebd7;
+  background: url(../img/background_sand.jpg);
+  background-size: 50px 50px;
   z-index: 3;
   position: relative;
   padding-bottom: 50px;

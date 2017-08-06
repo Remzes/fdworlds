@@ -134,7 +134,8 @@
 .section_two {
   height: auto;
   width: 100%;
-  background-color: #faebd7;
+  background: url(../img/background_sand.jpg);
+  background-size: 50px 50px;
   z-index: 3;
   position: relative;
   padding-bottom: 50px;
@@ -189,25 +190,37 @@
   transition: transform .5s;
 }
 .cd-hero-slider li:first-of-type {
-  background-image: url(../img/slider_big_images/vanilla.jpg);
+  background-image: url(../img/slider_big_images_razmit/vanilla.jpg);
 }
 .cd-hero-slider li:nth-of-type(2) {
-  background-image: url(../img/slider_big_images/kindoms.png);
+  background-image: url(../img/slider_big_images_razmit/kindoms.png);
 }
 .cd-hero-slider li:nth-of-type(3) {
-  background-image: url(../img/slider_big_images/skyblock.jpg);
+  background-image: url(../img/slider_big_images_razmit/skyblock.jpg);
 }
 .cd-hero-slider li:nth-of-type(4) {
-  background-image: url(../img/slider_big_images/creative.jpg);
+  background-image: url(../img/slider_big_images_razmit/creative.jpg);
 }
 .cd-hero-slider li:nth-of-type(5) {
-  background-image: url(../img/slider_big_images/games.jpg);
+  background-image: url(../img/slider_big_images_razmit/games.jpg);
 }
 .cd-hero-slider li.move-left {
   transform: translate(-100%);
 }
 .cd-hero-slider li.is-moving {
   transition: transform .5s;
+}
+.inside_slider_nav {
+  background: url(../img/section_three.png);
+  background-position: 0 0;
+  opacity: 0.5;
+  background-size: cover;
+  position: relative;
+  top: -70px;
+  z-index: 3;
+  left: 0;
+  width: 100%;
+  height: 70px;
 }
 .cd-maker {
   position: absolute;
@@ -216,10 +229,24 @@
   background-color: #ffffff;
   bottom: 0;
   z-index: 5;
-  background: url(../img/slider_nav_icons/Grass-icon.png) top center no-repeat;
+  background: url(../img/slider_nav_icons/0.png) top center no-repeat;
   background-size: cover;
-  left: 206px;
-  transition: transform ease-in-out 0.2s;
+  transform: translateY(0);
+  transition: transform ease-in-out 0.2s, background ease-in-out 0.3s;
+}
+.cd-slider-nav {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.cd-slider-nav nav {
+  width: 750px;
+  height: 70px;
+  margin: 0 auto;
+  position: relative;
 }
 .cd-slider-nav ul {
   position: absolute;
@@ -230,7 +257,6 @@
   align-items: center;
   justify-content: center;
   height: 70px;
-  background-color: rgba(0, 0, 0, 0.75);
 }
 .cd-slider-nav ul li {
   display: inline-block;
@@ -252,26 +278,71 @@
 }
 .cd-slider-nav ul li span {
   transition: all ease-in-out 0.1s;
+  display: inline-block;
 }
 .cd-slider-nav ul li.selected a {
   color: #fff;
 }
 .cd-slider-nav ul li.selected a span {
-  display: inline-block;
   transform: translateY(-20px);
 }
 .inside_li_in_slider {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
   height: 100%;
   background: #faebd7;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.inside_li_in_slider .content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  position: relative;
+  top: -35px;
+  color: #ffffff;
+  text-align: center;
+}
+.inside_li_in_slider .content h1 {
+  text-align: center;
+  font-size: 51px;
+  color: #34a64e;
+  letter-spacing: 7px;
+  margin-top: 10px;
+}
+.inside_li_in_slider .content p {
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+  font-family: "TTW";
+  font-size: 25px;
+}
+.inside_li_in_slider .content div {
+  margin-top: 30px;
+}
+.inside_li_in_slider .content div a {
+  outline: none;
+  text-decoration: none;
+  height: 40px;
+  display: inline-block;
+  width: 200px;
+  line-height: 40px;
+  padding-left: 3px;
+  font-family: "Minecraft";
+  color: #35C93C;
+  border-right: 1px solid #000;
+  background: url(../img/btn.png) 0 -40px;
+}
+.inside_li_in_slider .content div a:hover {
+  background: url(../img/btn.png) 0 -80px;
+  box-shadow: 0 0 10px gray;
+}
+.inside_li_in_slider .content div a:visited {
+  color: #35C93C;
+  background: url(../img/btn.png) 0 0;
 }
 .inside_li_in_slider h1 {
   font-family: "Digital Tech";
@@ -337,14 +408,6 @@
     font-size: 12px !important;
   }
 }
-@media screen and (max-width: 490px) {
-  .desc_appearance_section img {
-    display: none;
-  }
-  .desc_appearance_section p:nth-child(2n) {
-    background-color: #fff;
-  }
-}
 .section_three {
   background-color: #fff;
 }
@@ -359,6 +422,20 @@
   font-size: 55px;
   text-shadow: 0 0 1px #000;
   padding-bottom: 20px;
+}
+.section_four {
+  height: 1000px;
+  background-color: #000;
+  background: url(../img/section_three.png) top center;
+  background-size: cover;
+  z-index: -1;
+  width: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.section_five {
+  background: #ffffff;
+  height: 1000px;
 }
 @keyframes bounce {
   0%,
@@ -434,15 +511,22 @@
 }
 @font-face {
   font-family: "Digital Tech";
-  src: url(../fonts/digital_tech/Digital_tech.otf);
+  src: url(../fonts/digital_tech/Digital_tech.woff);
 }
 @font-face {
   font-family: "Strange";
-  src: url(../fonts/digital_tech/);
+  src: url(../fonts/digital_tech/Digital_tech.otf);
+}
+@font-face {
+  font-family: "TTW";
+  src: url(../fonts/ttwpgott/TTWPGOTT.ttf);
 }
 * {
   margin: 0;
   padding: 0;
+}
+body {
+  background: #000000;
 }
 #container {
   height: 100%;

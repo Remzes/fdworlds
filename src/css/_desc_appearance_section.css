@@ -52,11 +52,3 @@
     font-size: 12px !important;
   }
 }
-@media screen and (max-width: 490px) {
-  .desc_appearance_section img {
-    display: none;
-  }
-  .desc_appearance_section p:nth-child(2n) {
-    background-color: #fff;
-  }
-}

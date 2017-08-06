@@ -1,0 +1,10 @@
+.section_four {
+  height: 1000px;
+  background-color: #000;
+  background: url(../img/section_three.png) top center;
+  background-size: cover;
+  z-index: -1;
+  width: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
