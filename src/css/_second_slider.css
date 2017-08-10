@@ -57,8 +57,6 @@
   transition: transform .5s;
 }
 .inside_slider_nav {
-  background: url(../img/section_three.png);
-  background-position: 0 0;
   opacity: 0.5;
   background-size: cover;
   position: relative;
@@ -86,7 +84,7 @@
   position: absolute;
   bottom: 0;
   z-index: 4;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.45);
 }
 .cd-slider-nav nav {
   width: 750px;

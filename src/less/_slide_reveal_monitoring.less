@@ -1,0 +1,30 @@
+.slide_reveal_monitoring {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 240px;
+  background-color: #000;
+  z-index: 100;
+  color: white;
+  transition: height ease-in-out .25s;
+}
+
+.moved_down {
+  height: calc(~'100% - 90px') !important;
+}
+
+.arrow_left, .arrow_right {
+  transition: transform ease-in-out .2s;
+  display: inline-block;
+  position: relative;
+}
+
+.monitoring_toggle_btn, .shop_toggle_btn {
+  cursor: pointer;
+}
+
+.arrow_left {
+  right: 10px;
+}

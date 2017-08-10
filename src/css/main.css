@@ -47,6 +47,49 @@
   background: url('../img/6.jpg') center center fixed;
   background-size: cover;
 }
+.navigation {
+  display: block;
+  width: 100%;
+  height: 60px;
+  transition: all ease-in-out 0.25s;
+  position: fixed;
+  z-index: 1000;
+}
+.navigation img {
+  width: 252px;
+  height: 56px;
+  position: absolute;
+  top: 50%;
+  margin-top: -28px;
+  transform: translate(-100%, 0);
+  transition: transform ease-in-out 0.25s;
+}
+.navigation ul {
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+.navigation ul li {
+  display: table;
+  height: 100%;
+  margin-left: 100px;
+  font-family: Minecraft;
+}
+.navigation ul li:first-of-type {
+  margin-left: 0;
+}
+.navigation ul li a {
+  color: #76d4ff;
+  text-decoration: none;
+  display: table-cell;
+  vertical-align: middle;
+}
+.navigation ul:nth-of-type(2) a {
+  color: orangered;
+}
 .appearance {
   position: absolute;
   width: 100%;
@@ -55,10 +98,12 @@
 }
 .appearance .logo_image {
   background: url(../img/logo.png) top center no-repeat;
-  margin-top: 3%;
+  margin-top: 10%;
   width: 100%;
   height: 200px;
   animation: zoomInDown .8s both;
+  transition: transfrom 0.1s ease-in-out;
+  transform-origin: 0 0;
 }
 .appearance .menu {
   position: absolute;
@@ -146,8 +191,8 @@
   width: 100%;
   text-align: center;
   font-family: "Minecraft";
-  background: #000000;
-  color: #ffffff;
+  background: gray;
+  color: #fff;
   font-size: 55px;
   text-shadow: 0 0 1px #000;
   padding-bottom: 20px;
@@ -211,8 +256,6 @@
   transition: transform .5s;
 }
 .inside_slider_nav {
-  background: url(../img/section_three.png);
-  background-position: 0 0;
   opacity: 0.5;
   background-size: cover;
   position: relative;
@@ -240,7 +283,7 @@
   position: absolute;
   bottom: 0;
   z-index: 4;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.45);
 }
 .cd-slider-nav nav {
   width: 750px;
@@ -417,25 +460,79 @@
   width: 100%;
   text-align: center;
   font-family: "Minecraft";
-  background: #000000;
+  background: gray;
   color: #ffffff;
   font-size: 55px;
   text-shadow: 0 0 1px #000;
   padding-bottom: 20px;
 }
 .section_four {
-  height: 1000px;
-  background-color: #000;
-  background: url(../img/section_three.png) top center;
+  height: 500px;
+  background: url(../img/section_four2.jpg) center center;
   background-size: cover;
   z-index: -1;
-  width: 100%;
+  position: relative;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
-.section_five {
-  background: #ffffff;
-  height: 1000px;
+.section_four .inside-section-four {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+}
+.slide_reveal_monitoring {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 240px;
+  background-color: #000;
+  z-index: 100;
+  color: white;
+  transition: height ease-in-out 0.25s;
+}
+.moved_down {
+  height: calc(100% - 90px) !important;
+}
+.arrow_left,
+.arrow_right {
+  transition: transform ease-in-out 0.2s;
+  display: inline-block;
+  position: relative;
+}
+.monitoring_toggle_btn,
+.shop_toggle_btn {
+  cursor: pointer;
+}
+.arrow_left {
+  right: 10px;
+}
+.slide_reveal_shop {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: block;
+  height: 100%;
+  width: 0;
+  z-index: 100;
+  color: white;
+  transition: height ease-in-out 0.25s;
+}
+.slide_reveal_shop .inside_slide_shop {
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 0 5px 5px 5px;
+}
+.slide_reveal_shop .inside_slide_shop iframe {
+  width: 300px;
+  height: 100%;
+}
+.arrow_right {
+  left: 10px;
 }
 @keyframes bounce {
   0%,
@@ -525,8 +622,12 @@
   margin: 0;
   padding: 0;
 }
+html,
 body {
-  background: #000000;
+  height: 100%;
+}
+body {
+  overflow-x: hidden;
 }
 #container {
   height: 100%;

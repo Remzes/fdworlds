@@ -1,3 +1,46 @@
+.navigation {
+  display: block;
+  width: 100%;
+  height: 60px;
+  transition: all ease-in-out 0.25s;
+  position: fixed;
+  z-index: 1000;
+}
+.navigation img {
+  width: 252px;
+  height: 56px;
+  position: absolute;
+  top: 50%;
+  margin-top: -28px;
+  transform: translate(-100%, 0);
+  transition: transform ease-in-out 0.25s;
+}
+.navigation ul {
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+.navigation ul li {
+  display: table;
+  height: 100%;
+  margin-left: 100px;
+  font-family: Minecraft;
+}
+.navigation ul li:first-of-type {
+  margin-left: 0;
+}
+.navigation ul li a {
+  color: #76d4ff;
+  text-decoration: none;
+  display: table-cell;
+  vertical-align: middle;
+}
+.navigation ul:nth-of-type(2) a {
+  color: orangered;
+}
 .appearance {
   position: absolute;
   width: 100%;
@@ -6,10 +49,12 @@
 }
 .appearance .logo_image {
   background: url(../img/logo.png) top center no-repeat;
-  margin-top: 3%;
+  margin-top: 10%;
   width: 100%;
   height: 200px;
   animation: zoomInDown .8s both;
+  transition: transfrom 0.1s ease-in-out;
+  transform-origin: 0 0;
 }
 .appearance .menu {
   position: absolute;

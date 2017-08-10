@@ -1,15 +1,84 @@
 //Function when the page is loaded: scroll the position to the top
 $(document).ready(function () {
-    $(this).scrollTop(0)
-})//End of the function
+    $(this).scrollTop(0);
+    // jQuery.scrollSpeed(120, 800);
+});//End of the function
 
 //Function to move to the second block on scroll
 function moveToTheSecondBlock() {
     // $(".scroll_down").click(function() {
     $('html, body').animate({
         scrollTop: $('.section_two').offset().top
-    }, 600)
+    }, 500)
     // });
+}
+
+//Function to open/close monitoring slide reveal
+function openCloseSlideMonitoringReveal() {
+    let reveal = $(".slide_reveal_monitoring");
+
+    let btn = $(".monitoring_toggle_btn");
+    reveal.width() !== 0 ? btn.html("<span class='arrow_left'><=</span> Развернуть Мониторинг") : btn.html("<span class='arrow_left'><=</span> Свернуть Мониторинг");
+
+    reveal.animate({
+        "width": reveal.width() === 0 ? "240px" : 0
+    }, 'fast');
+}
+
+//Function to open/close shop slide reveal
+function openCloseSlideShopReveal() {
+    let reveal = $(".slide_reveal_shop");
+    let btn = $(".shop_toggle_btn");
+    reveal.width() !== 0 ? btn.html("Развернуть Магазин <span class='arrow_right'>=></span>") : btn.html("Свернуть Магазин <span class='arrow_right'>=></span>");
+
+    reveal.animate({
+        "width": reveal.width() === 0 ? "320px" : 0
+    }, 'fast');
+}
+
+//Function to change navigation styles
+function changeNavigationStylesOnScroll() {
+    if ($(window).scrollTop() > 0) {
+
+        $(".navigation").css({
+            "background-color": "rgba(0,0,0,0.95)",
+            "height": "90px"
+        });
+        $(".navigation img").css({
+            opacity: 1,
+            transform: "translate(0,0)"
+        });
+        $(".slide_reveal_monitoring").addClass("moved_down");
+        $(".arrow_left").css({
+            transform: 'rotate(-17deg)'
+        });
+
+        $(".arrow_right").css({
+            transform: 'rotate(17deg)'
+        });
+        $(".slide_reveal_shop").addClass("moved_down");
+
+    } else if ($(window).scrollTop() < 100) {
+
+        $(".navigation").css({
+            "background-color": "transparent",
+            "height": "70px"
+        });
+        $(".navigation img").css({
+            opacity: 0,
+            transform: "translate(-100px,0)"
+        });
+        $(".slide_reveal_monitoring").removeClass("moved_down");
+        $(".arrow_left").css({
+            transform: 'none'
+        });
+
+        $(".arrow_right").css({
+            transform: 'none'
+        });
+        $(".slide_reveal_shop").removeClass("moved_down");
+
+    }
 }
 
 //Function is responsible for changing the background-image of the first block on the page
@@ -81,7 +150,7 @@ function moveLogoAndMenuOnScroll() {
 function apperaInTheAboutSection() {
     let blocks = $('.desc_appearance_section section');
     $.each(blocks, function (index, element) {
-        setTimeout(function(){
+        setTimeout(function () {
             $(element).css({
                 transform: "translateX(0)",
                 opacity: 1
@@ -207,7 +276,7 @@ function mainSliderOnTheSecondBlock() {
 $(window).on('load', function () {
     mainSliderOnTheSecondBlock();
 
-    let scroll_down = $('.scroll_down')
+    let scroll_down = $('.scroll_down');
     scroll_down.animate({
         'opacity': 1
     }, 1000)
@@ -227,30 +296,26 @@ $(window).on('load', function () {
         }, (k + 1) * 150)
     })
 
-})//End of functions
+});//End of functions
 //Functions to be executed on scroll
 
 $(window).on('scroll', function () {
+    changeNavigationStylesOnScroll();
     fadeOutScrollDownButtonOnScroll();
     console.log($(window).scrollTop());
-    moveLogoAndMenuOnScroll();
+    // moveLogoAndMenuOnScroll();
     if ($(window).scrollTop() > 450) {
         apperaInTheAboutSection();
     }
 
-    if ($(window).scrollTop() > 2320) {
-        let scrollFourSection = $(window).scrollTop() / 27 + 1;
-
-        $(".section_four").css({
-            "background-position": `100px -${scrollFourSection}px`
-        });
-    }
-})//End of function
+});//End of function
 
 $('.scroll_down').on('click', function () {
     moveToTheSecondBlock();
     $(".cd-hero-slider").addClass('autoplay');
-})
+});
+$(".monitoring_toggle_btn").on("click", openCloseSlideMonitoringReveal);
+$(".shop_toggle_btn").on("click", openCloseSlideShopReveal);
 
 changeBackgroundImageOfTheFirstBlockOnThePage();
 // ----- End of Event Listeners -----
