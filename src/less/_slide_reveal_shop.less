@@ -10,7 +10,7 @@
   transition: height ease-in-out .25s;
 
   .inside_slide_shop {
-    height: 80%;
+    height: 656px;
     background-color: rgba(0,0,0,0.95);
     padding: 0 5px 5px 5px;
 
@@ -24,3 +24,13 @@
 .arrow_right {
    left: 10px;
  }
+
+.right_rotated {
+  transform: rotate(17deg);
+}
+
+@media screen and (max-height: 700px) {
+  .inside_slide_shop {
+    height: 350px !important;
+  }
+}

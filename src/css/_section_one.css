@@ -6,6 +6,7 @@
   height: 100vh;
   min-height: 100%;
   position: relative;
+  z-index: 3;
 }
 .section_one .slide {
   background-color: #000 !important;
@@ -16,26 +17,26 @@
   width: 100%;
 }
 .section_one .slide_one {
-  background: url('../img/1.jpg') center center fixed;
+  background: url('../img/first_slider_img/7.jpg') center center fixed;
   background-size: cover;
 }
 .section_one .slide_two {
-  background: url('../img/2.jpg') center center fixed;
+  background: url('../img/first_slider_img/2.jpg') center center fixed;
   background-size: cover;
 }
 .section_one .slide_three {
-  background: url('../img/3.jpg') center center fixed;
+  background: url('../img/first_slider_img/3.jpg') center center fixed;
   background-size: cover;
 }
 .section_one .slide_four {
-  background: url('../img/4.png') center center fixed;
+  background: url('../img/first_slider_img/4.png') center center fixed;
   background-size: cover;
 }
 .section_one .slide_five {
-  background: url('../img/5.jpg') center center fixed;
+  background: url('../img/first_slider_img/5.jpg') center center fixed;
   background-size: cover;
 }
 .section_one .slide_six {
-  background: url('../img/6.jpg') center center fixed;
+  background: url('../img/first_slider_img/6.jpg') center center fixed;
   background-size: cover;
 }

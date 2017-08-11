@@ -1,19 +1,63 @@
 .section_four {
-  height: 500px;
-  background: url(../img/section_four2.jpg) center center;
-  //background-position: 0 100px;
-  background-size: cover;
-  z-index: -1;
-  position: relative;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  height: 140px;
+  width: 100%;
+  background-size: 50px 50px;
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
 
   .inside-section-four {
-    position: absolute;
-    left: 0;
-    top: 0;
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.1);
+
+    ul {
+      height: 100%;
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        margin-left: 50px;
+        font-family: Minecraft;
+        font-size: 14px;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+
+        &:last-of-type {
+          width: 100%;
+          text-align: center;
+          margin-left: 0;
+        }
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          text-shadow: 0 0 10px #000;
+          transition: all ease-in-out .2s;
+
+          &:hover {
+            color: #000;
+            text-shadow: 0 0 10px #fff;
+          }
+
+          &:visited {
+            color: #fff;
+          }
+        }
+      }
+    }
   }
+}
+
+.section_four_cover {
+  height: 140px;
+  background: #76d4ff;
+  width: 100%;
+  display: block;
+  box-shadow: 0 10px 50px #000 inset;
 }

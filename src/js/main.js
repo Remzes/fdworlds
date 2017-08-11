@@ -1,24 +1,21 @@
 //Function when the page is loaded: scroll the position to the top
 $(document).ready(function () {
     $(this).scrollTop(0);
-    // jQuery.scrollSpeed(120, 800);
 });//End of the function
 
 //Function to move to the second block on scroll
 function moveToTheSecondBlock() {
-    // $(".scroll_down").click(function() {
     $('html, body').animate({
-        scrollTop: $('.section_two').offset().top
+        scrollTop: $('.section_two').offset().top - 90
     }, 500)
-    // });
 }
 
 //Function to open/close monitoring slide reveal
 function openCloseSlideMonitoringReveal() {
     let reveal = $(".slide_reveal_monitoring");
-
     let btn = $(".monitoring_toggle_btn");
-    reveal.width() !== 0 ? btn.html("<span class='arrow_left'><=</span> Развернуть Мониторинг") : btn.html("<span class='arrow_left'><=</span> Свернуть Мониторинг");
+    let new_class = reveal.hasClass("moved_down") ? "arrow_left left_rotated" : "arrow_left";
+    reveal.width() !== 0 ? btn.html("<span class='"+ new_class +"'><=</span> Развернуть Мониторинг") : btn.html("<span class='"+ new_class +"'><=</span> Свернуть Мониторинг");
 
     reveal.animate({
         "width": reveal.width() === 0 ? "240px" : 0
@@ -29,7 +26,9 @@ function openCloseSlideMonitoringReveal() {
 function openCloseSlideShopReveal() {
     let reveal = $(".slide_reveal_shop");
     let btn = $(".shop_toggle_btn");
-    reveal.width() !== 0 ? btn.html("Развернуть Магазин <span class='arrow_right'>=></span>") : btn.html("Свернуть Магазин <span class='arrow_right'>=></span>");
+    let new_class = "";
+    reveal.hasClass("moved_down") ? new_class = "arrow_right right_rotated" : new_class = "arrow_right";
+    reveal.width() !== 0 ? btn.html("Развернуть Магазин <span class='"+ new_class +"'>=></span>") : btn.html("Свернуть Магазин <span class='"+ new_class +"'>=></span>");
 
     reveal.animate({
         "width": reveal.width() === 0 ? "320px" : 0
@@ -66,7 +65,7 @@ function changeNavigationStylesOnScroll() {
         });
         $(".navigation img").css({
             opacity: 0,
-            transform: "translate(-100px,0)"
+            transform: "translate(-150px,0)"
         });
         $(".slide_reveal_monitoring").removeClass("moved_down");
         $(".arrow_left").css({
@@ -168,7 +167,7 @@ function mainSliderOnTheSecondBlock() {
     let slidesNumber = sliderWrapper.children('li').length;
     let visibleSlidePosition = 0;
     let autoPlayId = 0;
-    let autoPlayDelay = 240000;
+    let autoPlayDelay = 10000;
 
     setAutoplay(sliderWrapper, slidesNumber, autoPlayDelay);
 
@@ -271,6 +270,13 @@ function mainSliderOnTheSecondBlock() {
     }
 }//End of function
 
+//Function to move to the third section
+function moveToThirdSection(){
+    $('html, body').animate({
+        scrollTop: $('.section_three').offset().top - 90
+    }, 800)
+};
+
 // -----  Event listeners -------
 //Functions to be executed on load
 $(window).on('load', function () {
@@ -297,24 +303,33 @@ $(window).on('load', function () {
     })
 
 });//End of functions
-//Functions to be executed on scroll
 
+//Functions to be executed on scroll
 $(window).on('scroll', function () {
+    if ($(this).scrollTop() < 2000){
+        $(".section_four").css({
+            display: "none"
+        })
+    } else {
+        $(".section_four").css({
+            display: "block"
+        })
+    }
+
     changeNavigationStylesOnScroll();
     fadeOutScrollDownButtonOnScroll();
-    console.log($(window).scrollTop());
-    // moveLogoAndMenuOnScroll();
     if ($(window).scrollTop() > 450) {
         apperaInTheAboutSection();
     }
 
 });//End of function
 
-$('.scroll_down').on('click', function () {
+$('.scroll_down, #project_desc_btn').on('click', function () {
     moveToTheSecondBlock();
     $(".cd-hero-slider").addClass('autoplay');
 });
-$(".monitoring_toggle_btn").on("click", openCloseSlideMonitoringReveal);
+$('#servers_btn').on('click', moveToThirdSection);
+// $(".monitoring_toggle_btn").on("click", openCloseSlideMonitoringReveal);
 $(".shop_toggle_btn").on("click", openCloseSlideShopReveal);
 
 changeBackgroundImageOfTheFirstBlockOnThePage();
