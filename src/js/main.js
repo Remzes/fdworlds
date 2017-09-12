@@ -1,7 +1,7 @@
 //Function when the page is loaded: scroll the position to the top
 $(document).ready(function () {
     $(this).scrollTop(0);
-});//End of the function
+
 
 //Function to move to the second block on scroll
 function moveToTheSecondBlock() {
@@ -18,7 +18,11 @@ function openCloseSlideMonitoringReveal() {
     reveal.width() !== 0 ? btn.html("<span class='"+ new_class +"'><=</span> Развернуть Мониторинг") : btn.html("<span class='"+ new_class +"'><=</span> Свернуть Мониторинг");
 
     reveal.animate({
-        "width": reveal.width() === 0 ? "240px" : 0
+        "width": reveal.width() === 0 ? "278px" : 0
+    }, 'fast');
+
+    $(".inside_slide_monitoring").css({
+        "padding": reveal.width() < 270 ? "0 5px 5px 5px": 0
     }, 'fast');
 }
 
@@ -26,8 +30,7 @@ function openCloseSlideMonitoringReveal() {
 function openCloseSlideShopReveal() {
     let reveal = $(".slide_reveal_shop");
     let btn = $(".shop_toggle_btn");
-    let new_class = "";
-    reveal.hasClass("moved_down") ? new_class = "arrow_right right_rotated" : new_class = "arrow_right";
+    let new_class = reveal.hasClass("moved_down") ? "arrow_right right_rotated" : "arrow_right";
     reveal.width() !== 0 ? btn.html("Развернуть Магазин <span class='"+ new_class +"'>=></span>") : btn.html("Свернуть Магазин <span class='"+ new_class +"'>=></span>");
 
     reveal.animate({
@@ -232,8 +235,8 @@ function mainSliderOnTheSecondBlock() {
     }
 
     function updateSliderNavigation(pagination, n) {
-        let navigationDot = pagination.find('.selected')
-        navigationDot.removeClass('selected')
+        let navigationDot = pagination.find('.selected');
+        navigationDot.removeClass('selected');
         pagination.find('li').eq(n).addClass('selected')
     }
 
@@ -331,7 +334,9 @@ $('.scroll_down, #project_desc_btn').on('click', function () {
 $('#servers_btn').on('click', moveToThirdSection);
 // $(".monitoring_toggle_btn").on("click", openCloseSlideMonitoringReveal);
 $(".shop_toggle_btn").on("click", openCloseSlideShopReveal);
+$(".monitoring_toggle_btn").on("click", openCloseSlideMonitoringReveal);
 
 changeBackgroundImageOfTheFirstBlockOnThePage();
 // ----- End of Event Listeners -----
 
+});//End of the function

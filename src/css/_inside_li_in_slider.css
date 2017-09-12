@@ -29,7 +29,7 @@
   display: inline-block;
   width: 100%;
   margin-top: 20px;
-  font-family: "TTW";
+  font-family: "Iris Normal";
   font-size: 25px;
 }
 .inside_li_in_slider .content div {
@@ -64,5 +64,5 @@
   padding: 0;
 }
 .inside_li_in_slider p {
-  font-family: "Inconsolata", monospace;
+  font-family: "Inconsolata", monospace !important;
 }

@@ -2,13 +2,22 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  display: none;
+  display: block;
   height: 100%;
-  width: 240px;
-  background-color: #000;
+  width: 278px;
   z-index: 100;
   color: white;
   transition: height ease-in-out 0.25s;
+}
+.slide_reveal_monitoring .inside_slide_monitoring {
+  height: 656px;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 0 5px 5px 5px;
+}
+.slide_reveal_monitoring .inside_slide_monitoring iframe {
+  overflow: hidden !important;
+  width: 100%;
+  height: 100%;
 }
 .moved_down {
   height: calc(100% - 90px) !important;
